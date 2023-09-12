@@ -1,6 +1,10 @@
 import time
 import random
 
+# Define variables to track game state
+found_treasure = False
+wrong_choices = 0
+
 # Define a function to print messages with a delay between them.
 def print_pause(*messages, delay=2):
     """
@@ -36,6 +40,8 @@ def get_player_choice():
 
 # Define the main game function.
 def forest_game():
+    global found_treasure, wrong_choices  # Declare global variables
+
     intro()
     choice = get_player_choice()
 
@@ -46,13 +52,25 @@ def forest_game():
         if encounter == 'monster':
             print_pause("Suddenly, a fearsome monster emerges from the shadows!")
             print_pause("You must fight to defend yourself.")
+            
             # Implement combat logic here
             # Depending on the outcome, you can determine a win or loss condition.
+            if player_wins_battle():
+                print_pause("You defeated the monster and continue your journey.")
+            else:
+                print_pause("The monster overpowers you. You lose the game.")
+                return  # End the game if the player loses.
         else:
             print_pause("As you continue along the trail, you encounter a mysterious figure.")
             print_pause("They offer you a riddle.")
+            
             # Implement a riddle or puzzle here
             # Depending on the player's answer, you can determine a win or loss condition.
+            if player_solves_riddle():
+                print_pause("You solved the riddle and continue your journey.")
+            else:
+                print_pause("You couldn't solve the riddle. You lose the game.")
+                return  # End the game if the player loses.
 
     elif choice == '2':
         print_pause("You follow the well-trodden path to the clearing.")
@@ -61,11 +79,13 @@ def forest_game():
         chest_choice = get_player_choice()
 
         if chest_choice == '1':
+            found_treasure = True  # Player found the treasure
             print_pause("You open the chest and find valuable treasures!")
-            # Implement a win condition
+            print_pause("Congratulations! You have won the game.")
+
         else:
             print_pause("You decide to leave the chest untouched and continue exploring.")
-            # Implement other game events
+
 
 if __name__ == "__main__":
     forest_game()
