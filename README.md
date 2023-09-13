@@ -1,6 +1,6 @@
 # Forest of Whispers - Text-based Adventure Game
 
-Welcome to **Forest of Whispers**, a text-based adventure game set in a mysterious forest filled with secrets and challenges. Will you uncover the hidden treasure, or will you fall victim to the forest's mysteries? Test your wits and courage in this thrilling adventure!
+Welcome to **Forest of Whispers**, a text-based adventure game set in a mysterious forest filled with secrets and challenges. Will you uncover the hidden treasure, or will you fall victim to the forest's mysteries? Test your wits and courage in this thrilling adventure! This project was birthed as challenge for Udacity Nanodegree intro to Programming.
 
 ## How to Play
 
@@ -24,13 +24,13 @@ Welcome to **Forest of Whispers**, a text-based adventure game set in a mysterio
 
 1. Ensure you have Python installed on your computer.
 
-2. Download the game code (`forest_game.py`) to your local machine.
+2. Download the game code (`fow_sourcecode.py`) to your local machine.
 
 3. Open your terminal/command prompt and navigate to the directory where the game code is located.
 
 4. Run the game by entering the following command:
    ```
-   python forest_game.py
+   fow_sourcecode.py
    ```
 
 5. Follow the on-screen instructions to play the game.
